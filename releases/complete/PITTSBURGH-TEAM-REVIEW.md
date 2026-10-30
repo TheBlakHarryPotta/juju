@@ -1,0 +1,43 @@
+# Marcus review — Pittsburgh edition
+
+This report covers the changes requested after the contract update. The named workers are collaborating AI agents. It distinguishes completed features from ideas for later work.
+
+| Worker | Work completed | Review and corrections |
+| --- | --- | --- |
+| Eliza — design | Full shell/dashboard/sidebar/form/table/dialog redesign; four persistent palettes; original Clemente-inspired bridge/skyline and Three Rivers-only ballpark/football stadiums; river flow and reflections, staggered office lights, two traffic lanes, an occasional airplane, entrance/hover animation; phone layouts and appearance/motion controls. | Marcus inspected running screens. Breakers found and retested a blocked mobile drawer click and missing desktop illustration. Eliza fixed both, improved text contrast, and preserved print styling. Motion honors reduced motion, explicit off and background visibility. Pinterest/Dribbble/Awwwards/Linear were blocked by this environment; accessible GitHub design references and limitations are recorded in DESIGN-RESEARCH.md. |
+| Chloe — sales workflows | Inbound/outbound Tours, Networking, Prospect Pipeline, contact status and next steps; reviewed call/RFP conversion; Weekly Sales Feed; stable-source manual sends and prospect duplicate review. | Plans do not count as completed contacts. Completed meetings link to one Activity Log entry; edits update it. Final guards prevent deleted/edited actual activity being resurrected from a stale workflow record or report pin. Undated historical RFPs do not acquire invented reporting dates. |
+| Aaron — deal analysis | Stronger Group Deal Checker with nightly inventory/forecast, comps, costs/commissions/concessions, displaced alternative contribution, break-even and target rate floors, downside scenarios, saved local checks and CSV/JSON export. | Independent $365 known-answer calculation, nine floor solves and strict validation checks. Missing inputs block analysis; changed inputs block stale export. No invented Hilton pricing policy, attrition collection or claim of full net profit. Pipeline routes into the enhanced checker while preserving old data. |
+| Amad — security and integrity | Reviewed fixed-schema table parsing, import boundaries, hotel isolation, backup coverage, property switching and async review safety. Added targeted hostile-input, correction, backup and race tests. | Found and helped fix same-file correction being skipped; 200,000-character preview truncation being mistaken for complete CSV; stale property-switch load overwriting a newer hotel; forged task-envelope fields; stale linked reporting sources. Verified local processing and inert imported markup with synthetic sources. |
+| The Breakers — independent QA | Actual-browser workflow, palette persistence, real phone-menu navigation, import → prospect, Lighthouse → weekly report, Call Desk → RFP/prospect, deal UI/export, manual-send duplicate protection and animation checks; desktop/phone screenshots; full regression run. | Reported implementation defects instead of just accepting worker claims. Reduced-motion screenshots are separate from normal-motion advancement checks. Chromium automation does not establish Safari/iOS/native macOS compatibility. Final validation evidence is in PITTSBURGH-VALIDATION.md. |
+| Marcus — integration and final review | Dedicated Import Station with destination choice, whole-table paste, bounded CSV/TSV/XLSX mapping, full-source validation, explicit date order, saved source provenance; Lighthouse same-week-last-year BT summaries; shared weekly-report data for preview/Excel/email/PDF; legacy per-record send controls and reviewed section-highlight fallback; broad duplicate review; updater/release packaging and independent screen review. | Repeated source sends do not create extra completed activity. Imported totals are excluded. Missing comparison data is not zero. Same-period corrections require explicit replacement. The app-only updater preserves installed transcription files; it has not been remotely run on the user's Mac. |
+
+## Marcus's opinion
+
+The largest practical improvement is the connected workflow: a reviewed inquiry becomes a prospect, the prospect has a dated next step, completed work enters the activity log once, and the weekly report uses those records directly. The visual update is useful because capture, follow-through and reporting are easier to find. Motion is decorative and optional; source accuracy matters more than a polished animation.
+
+For Lighthouse, the working default is the user's stated comparison: **the past week versus last year**. The importer requires a reviewed seven-day period for that mode and retains period dates, room nights, revenue, ADR and available comparison changes. A representative real Lighthouse export is still needed to verify its particular headings/layout. Current validation uses synthetic CSV/XLSX-shaped data, not a claimed private portal integration.
+
+Duplicate protection has two levels: exact source identity prevents repeated import/report inclusion, and potential company/email/phone/content matches are shown for human review. Two different hotel inquiries can legitimately share a contact, so the app does not delete or merge them automatically.
+
+The checker helps defend rates using entered contribution and opportunity-cost assumptions. It cannot replace approved revenue guidance. Alternative room contribution is modeled; displaced event-space/alternative ancillary opportunity, overhead, tax and financing are outside the model.
+
+## Best next additions
+
+1. **A daily recovery and renewal queue:** combine verified account declines, expiring negotiated agreements and due follow-ups. Show why each account is on the list, its source period and one suggested next action. This is the strongest next prospecting investment.
+2. **A tour brief and follow-through kit:** one page with the prospect's stated needs, room mix, objections, missing answers and proposed next step; then a follow-up draft from the actual tour result.
+3. **RFP response timing and conversion:** track received time, bid deadline, first response, proposal and outcome. Separate work completed, booked room nights and actualized production so the report demonstrates business value without overstating it.
+4. **A Pittsburgh market desk:** reviewed public event/venue/project leads matched to approved hotel need dates, with source links and contact verification. Treat these as research leads, not assumed room demand.
+
+These are recommendations, not claims that live market feeds, automatic outreach, calendar/email integration or private Hilton-system connections have been installed. Further details are in SALES-IDEAS.md.
+
+## Earlier contract update included in this build
+
+If updating from the first M1 ZIP, this build also includes the already prepared professional courtesy-agreement layout and whole-conversation Contract Maker import. Paste/drop the whole transcript, review the proposed fields in one batch, then apply them together. Existing populated values are not silently overwritten. Contract style, legal terms and signing remain explicit reviewed choices. The private uploaded reference PDF, customer contacts and its signature are excluded from the release. See CONTRACTS-UPDATE.md and TEAM-CHANGE-REVIEW.md for that earlier work and its separate validation record.
+
+## Marcus and Chloe: new proposed innovations
+
+Marcus prioritizes a Need-Date Matchmaker for revenue-focused prospecting: turn reviewed soft-night forecasts and documented prospect stay patterns into source-backed outreach opportunities. Chloe prioritizes a single reviewed conversation package for time savings: coordinate the prospect, opportunity, contract fields, next task and weekly source in one approval, with a change receipt and undo. These are recommendations for the next implementation, not claims that the current app already performs one coordinated transaction across all five screens. Both also recommend a repeat-business calendar based on verified past production and planning windows. See SALES-IDEAS.md for trigger, output, required data, limitations and a staged build plan.
+
+## Complete-workflow implementation follow-up
+
+The three innovations previously proposed in this review are now implemented: Deal Package, Need Date Matchmaker and Repeat Business Memory. Follow-ups & History, destination routing, shared atomic save/receipts and guarded undo connect them to the existing app. See COMPLETE-UPDATE.md, LINKED-SAVE-REVIEW.md and INNOVATIONS-VALIDATION.md for the current build. Older proposal wording above describes the earlier design review, not a remaining implementation gap.
